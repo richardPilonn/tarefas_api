@@ -1,0 +1,20 @@
+<?php 
+
+namespace App\Service;
+
+use App\Models\Usuario;
+use GuzzleHttp\Psr7\Request;
+
+class UsuarioService
+
+{
+        public function create (array $dados){
+            $user = Usuario::create([
+                'nome' => $dados ['nome'],
+                'email'=> $dados ['email'],
+                'password' => $dados ['password']
+            ]);
+            return $user;
+        }
+}
+
